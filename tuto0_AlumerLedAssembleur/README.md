@@ -1,24 +1,24 @@
-## Présentation d'un OS Minimaliste pour Raspberi pi zero 2 W
+# Présentation d'un OS Minimaliste pour Raspberi pi zero 2 W
 
-# Comportement OS
+## Comportement OS
 
 Le GPIO 21 alterne entre 0V et 5V ce qui permet d'allumer et eteindre une led periodiquement
 
-# Code
+## Code
 
 Il n'y a aucun code source en C.
 Tout est fait en assembleur ARM
 
-## Test du code
+# Test du code
 
-# Créer les bianires
+## Créer les bianires
 
 0) sudo apt install gcc-arm-none-eabi                // Chaine de compilation croisée 
    sudo apt intall apt install build-essential       // Make
 
 1) Faire un make pour créer kernel7.img et kernel.elf
 
-# Comment lancer le code sur le raspi physique
+## Comment lancer le code sur le raspi physique
 
 0) Telecharger Raspberry Pi Imager et une image de Raspi OS  (anciennement Raspbian)
 
@@ -34,7 +34,7 @@ Tout est fait en assembleur ARM
 
 5) Ejecter la carte SD, l'insérer dans le raspi et alimenter le raspi
 
-# Comment lancer le code sur Qemu et déboger grâce à Gdb
+## Comment lancer le code sur Qemu et déboger grâce à Gdb
 
 0)  Telecharger les utilistaires de la chaine de compilation pour ARMv7 (Gdb en particulier):
     Dans un nouveau dossier (à creer) gccArmv7:
