@@ -49,13 +49,7 @@ Tout est fait en assembleur ARM
 
 1)  Émuler notre raspi avec qemu en mode débug (-s -S):
 
-    qemu-system-arm -m 1024 -M raspi2b -serial stdio -kernel kernel.elf -s -S
-
-    Remarque: il est plus approprié d'executer :
     qemu-system-arm -m 512 -M raspi0 -serial stdio -kernel kernel.elf -s -S
-    mais j'ai eu des problemes d'acces mémoire avec l'émulation du raspi0
-    donc on test le code sur le raspi2b
-
 
 2)  Dans un autre terminal, déboger en distant:
     
