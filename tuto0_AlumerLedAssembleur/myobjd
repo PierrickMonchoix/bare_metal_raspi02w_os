@@ -1,0 +1,126 @@
+
+kernel.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00008000 <_start>:
+    8000:	e59f003c 	ldr	r0, [pc, #60]	; 8044 <delay2+0x10>
+    8004:	e3a01008 	mov	r1, #8
+    8008:	e5801008 	str	r1, [r0, #8]
+    800c:	e3a02601 	mov	r2, #1048576	; 0x100000
+
+00008010 <loop>:
+    8010:	e3a01602 	mov	r1, #2097152	; 0x200000
+    8014:	e580101c 	str	r1, [r0, #28]
+    8018:	e02aa00a 	eor	sl, sl, sl
+
+0000801c <delay1>:
+    801c:	e28aa001 	add	sl, sl, #1
+    8020:	e15a0002 	cmp	sl, r2
+    8024:	1afffffc 	bne	801c <delay1>
+    8028:	e3a01602 	mov	r1, #2097152	; 0x200000
+    802c:	e5801028 	str	r1, [r0, #40]	; 0x28
+    8030:	e02aa00a 	eor	sl, sl, sl
+
+00008034 <delay2>:
+    8034:	e28aa001 	add	sl, sl, #1
+    8038:	e15a0002 	cmp	sl, r2
+    803c:	1afffffc 	bne	8034 <delay2>
+    8040:	eafffff2 	b	8010 <loop>
+    8044:	3f200000 	svccc	0x00200000
+
+Disassembly of section .debug_aranges:
+
+00000000 <.debug_aranges>:
+   0:	0000001c 	andeq	r0, r0, ip, lsl r0
+   4:	00000002 	andeq	r0, r0, r2
+   8:	00040000 	andeq	r0, r4, r0
+   c:	00000000 	andeq	r0, r0, r0
+  10:	00008000 	andeq	r8, r0, r0
+  14:	00000048 	andeq	r0, r0, r8, asr #32
+	...
+
+Disassembly of section .debug_info:
+
+00000000 <.debug_info>:
+   0:	00000022 	andeq	r0, r0, r2, lsr #32
+   4:	00000002 	andeq	r0, r0, r2
+   8:	01040000 	mrseq	r0, (UNDEF: 4)
+   c:	00000000 	andeq	r0, r0, r0
+  10:	00008000 	andeq	r8, r0, r0
+  14:	00008048 	andeq	r8, r0, r8, asr #32
+  18:	00000000 	andeq	r0, r0, r0
+  1c:	00000008 	andeq	r0, r0, r8
+  20:	00000049 	andeq	r0, r0, r9, asr #32
+  24:	Address 0x0000000000000024 is out of bounds.
+
+
+Disassembly of section .debug_abbrev:
+
+00000000 <.debug_abbrev>:
+   0:	10001101 	andne	r1, r0, r1, lsl #2
+   4:	12011106 	andne	r1, r1, #-2147483647	; 0x80000001
+   8:	1b0e0301 	blne	380c14 <GPIOVAL+0x180c14>
+   c:	130e250e 	movwne	r2, #58638	; 0xe50e
+  10:	00000005 	andeq	r0, r0, r5
+
+Disassembly of section .debug_line:
+
+00000000 <.debug_line>:
+   0:	00000046 	andeq	r0, r0, r6, asr #32
+   4:	001e0003 	andseq	r0, lr, r3
+   8:	01020000 	mrseq	r0, (UNDEF: 2)
+   c:	000d0efb 	strdeq	r0, [sp], -fp
+  10:	01010101 	tsteq	r1, r1, lsl #2
+  14:	01000000 	mrseq	r0, (UNDEF: 0)
+  18:	00010000 	andeq	r0, r1, r0
+  1c:	72617473 	rsbvc	r7, r1, #1929379840	; 0x73000000
+  20:	00732e74 	rsbseq	r2, r3, r4, ror lr
+  24:	00000000 	andeq	r0, r0, r0
+  28:	00020500 	andeq	r0, r2, r0, lsl #10
+  2c:	03000080 	movweq	r0, #128	; 0x80
+  30:	2f31010f 	svccs	0x0031010f
+  34:	312f3231 			; <UNDEFINED> instruction: 0x312f3231
+  38:	312f2f30 			; <UNDEFINED> instruction: 0x312f2f30
+  3c:	2f30312f 	svccs	0x0030312f
+  40:	6003302f 	andvs	r3, r3, pc, lsr #32
+  44:	0002022e 	andeq	r0, r2, lr, lsr #4
+  48:	Address 0x0000000000000048 is out of bounds.
+
+
+Disassembly of section .debug_str:
+
+00000000 <.debug_str>:
+   0:	72617473 	rsbvc	r7, r1, #1929379840	; 0x73000000
+   4:	00732e74 	rsbseq	r2, r3, r4, ror lr
+   8:	6d6f682f 	stclvs	8, cr6, [pc, #-188]!	; ffffff54 <GPIO_BASE+0xc0dfff54>
+   c:	69702f65 	ldmdbvs	r0!, {r0, r2, r5, r6, r8, r9, sl, fp, sp}^
+  10:	69727265 	ldmdbvs	r2!, {r0, r2, r5, r6, r9, ip, sp, lr}^
+  14:	642f6b63 	strtvs	r6, [pc], #-2915	; 1c <GPFSET0>
+  18:	6c657665 	stclvs	6, cr7, [r5], #-404	; 0xfffffe6c
+  1c:	656d706f 	strbvs	r7, [sp, #-111]!	; 0xffffff91
+  20:	6d2f746e 	cfstrsvs	mvf7, [pc, #-440]!	; fffffe70 <GPIO_BASE+0xc0dffe70>
+  24:	736f5f79 	cmnvc	pc, #484	; 0x1e4
+  28:	7361725f 	cmnvc	r1, #-268435451	; 0xf0000005
+  2c:	742f6970 	strtvc	r6, [pc], #-2416	; 34 <GPFCLR0+0xc>
+  30:	306f7475 	rsbcc	r7, pc, r5, ror r4	; <UNPREDICTABLE>
+  34:	756c415f 	strbvc	r4, [ip, #-351]!	; 0xfffffea1
+  38:	4c72656d 	cfldr64mi	mvdx6, [r2], #-436	; 0xfffffe4c
+  3c:	73416465 	movtvc	r6, #5221	; 0x1465
+  40:	626d6573 	rsbvs	r6, sp, #482344960	; 0x1cc00000
+  44:	7275656c 	rsbsvc	r6, r5, #108, 10	; 0x1b000000
+  48:	554e4700 	strbpl	r4, [lr, #-1792]	; 0xfffff900
+  4c:	20534120 	subscs	r4, r3, r0, lsr #2
+  50:	34332e32 	ldrtcc	r2, [r3], #-3634	; 0xfffff1ce
+	...
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00001141 	andeq	r1, r0, r1, asr #2
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	00000007 	andeq	r0, r0, r7
+  10:	Address 0x0000000000000010 is out of bounds.
+
