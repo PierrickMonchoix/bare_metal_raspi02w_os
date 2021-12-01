@@ -3,7 +3,7 @@
 ## Objectif
 
 Faire clignoter une LED externe au RPi. Le Vcc de la LED sera branché sur le GPIO 21.
-Le début du code source de ce programme est en assembleur et a pour but de faire passer la suite de l'execution sur du code source en C.
+Seul du code assembleur (Aarch64) sera utilisé ici.
 
 ## Materiel nécessaire
 
