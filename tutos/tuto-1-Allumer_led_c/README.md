@@ -20,9 +20,15 @@ J'utilise personnelement WSL et vscode sur mon environement Windows pour pouvoir
 
 #### Préparation du RPi
 
-1. Connecter le GPIO 21 du RPi au Vcc d'une LED.
+1. Connecter le pin 21 du RPi au Vcc de la LED.
 
-2. Connecter le Gnd de cette le
+2. Connecter le Gnd de la LED à la résistance (branche "A" de la résustance).
+
+3. Connecter la seconde branche de la résistance à un pin Gnd du RPi.
+
+Schéma:
+
+pin 21 Rpi   --- LED --- Resistance --- Gnd RPi
 
 #### Préparation de la carte SD
 
