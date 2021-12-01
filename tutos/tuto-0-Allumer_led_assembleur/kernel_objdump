@@ -1,0 +1,37 @@
+
+kernel.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000400078 <_start>:
+  400078:	580002c0 	ldr	x0, 4000d0 <delay2+0x1c>
+  40007c:	18000241 	ldr	w1, 4000c4 <delay2+0x10>
+  400080:	b9000801 	str	w1, [x0, #8]
+  400084:	18000222 	ldr	w2, 4000c8 <delay2+0x14>
+  400088:	18000201 	ldr	w1, 4000c8 <delay2+0x14>
+  40008c:	b9001c01 	str	w1, [x0, #28]
+
+0000000000400090 <loop>:
+  400090:	180001c1 	ldr	w1, 4000c8 <delay2+0x14>
+  400094:	b9001c01 	str	w1, [x0, #28]
+  400098:	ca0a014a 	eor	x10, x10, x10
+
+000000000040009c <delay1>:
+  40009c:	9100054a 	add	x10, x10, #0x1
+  4000a0:	eb02015f 	cmp	x10, x2
+  4000a4:	54ffffc1 	b.ne	40009c <delay1>  // b.any
+  4000a8:	18000101 	ldr	w1, 4000c8 <delay2+0x14>
+  4000ac:	b9002801 	str	w1, [x0, #40]
+  4000b0:	ca0a014a 	eor	x10, x10, x10
+
+00000000004000b4 <delay2>:
+  4000b4:	9100054a 	add	x10, x10, #0x1
+  4000b8:	eb02015f 	cmp	x10, x2
+  4000bc:	54ffffc1 	b.ne	4000b4 <delay2>  // b.any
+  4000c0:	17fffff4 	b	400090 <loop>
+  4000c4:	00000008 	.inst	0x00000008 ; undefined
+  4000c8:	00200000 	.inst	0x00200000 ; NYI
+  4000cc:	00000000 	.inst	0x00000000 ; undefined
+  4000d0:	3f200000 	.inst	0x3f200000 ; undefined
+  4000d4:	00000000 	.inst	0x00000000 ; undefined
