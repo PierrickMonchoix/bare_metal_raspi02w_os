@@ -8,6 +8,6 @@ void kernel_main(void)
 
 	while (1) {
 		uart_send(5);
-		mpdelay(50);
+		mpdelay(50);  // mon delay
 	}
 }
