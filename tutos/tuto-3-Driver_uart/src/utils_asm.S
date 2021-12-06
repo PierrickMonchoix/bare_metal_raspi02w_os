@@ -1,5 +1,5 @@
-.globl put32
-put32:
+.globl set32
+set32:
 	str w1,[x0]
 	ret
 
