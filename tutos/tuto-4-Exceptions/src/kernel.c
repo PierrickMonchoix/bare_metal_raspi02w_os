@@ -5,8 +5,14 @@
 
 void kernel_main(void)
 {
+
+	getCurrentEl();
+	setVectorTableEl2();
+	riseExceptionEl2(); 
+
 	uart_init();
 	uart_send_string("\n###### Kernel initialise ! ######\n\n");
+
 
    
    
