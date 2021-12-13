@@ -7,8 +7,8 @@ void kernel_main(void)
 {
 
 	getCurrentEl();
-	setVectorTableEl2();
-	riseExceptionEl2(); 
+/* 	setVectorTableEl2();
+	riseExceptionEl2();  */
 
 	uart_init();
 	uart_send_string("\n###### Kernel initialise ! ######\n\n");
@@ -16,16 +16,16 @@ void kernel_main(void)
 
    
    
-   char ptrStr[65];
+/*    char ptrStr[65];
 
    uint64_t currentel = getCurrentEl();
     
-   intToString(ptrStr , currentel);
+   intToString(ptrStr , currentel); */
 
 	while (1) {
 		uart_send_string("\nExceptions :)\n");
-		uart_send_string(ptrStr);
-		uart_send_string("\n\n");
+		//uart_send_string(ptrStr);
+		uart_send_string("\nok dude\n");
 		millisDelay(2000);  // mon delay
 	}
 }
